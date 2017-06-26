@@ -1,0 +1,5 @@
+rootProject.name = 'spring-boot-kotlin'
+
+include 'sbk-backend'
+include 'sbk-core'
+
