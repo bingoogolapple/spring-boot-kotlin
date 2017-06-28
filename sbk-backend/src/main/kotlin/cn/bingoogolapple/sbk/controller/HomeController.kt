@@ -18,4 +18,9 @@ class HomeController {
         return ModelAndView("forward://index.html");
     }
 
+    @RequestMapping(value = "/guest")
+    fun guest(): String {
+        return "guest"
+    }
+
 }
