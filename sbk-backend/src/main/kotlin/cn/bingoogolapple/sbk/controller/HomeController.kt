@@ -1,4 +1,4 @@
-package cn.bingoogolapple.sbkgnote.controller
+package cn.bingoogolapple.sbk.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
