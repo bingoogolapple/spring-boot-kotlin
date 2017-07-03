@@ -1,6 +1,9 @@
 package cn.bingoogolapple.sbk.config
 
+import cn.bingoogolapple.sbk.interceptor.AuthorizationInterceptor
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Configuration
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
@@ -11,11 +14,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 class WebConfig : WebMvcConfigurerAdapter() {
+    @Autowired
+    private val authorizationInterceptor: AuthorizationInterceptor? = null
 
-    override fun addResourceHandlers(registry: ResourceHandlerRegistry?) {
-        registry?.apply {
-            addResourceHandler("/static/**").addResourceLocations("classpath:/static/")
-        }
+    override fun addInterceptors(registry: InterceptorRegistry) {
+        registry.addInterceptor(authorizationInterceptor!!)
+    }
+
+
+    override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/")
     }
 
 }

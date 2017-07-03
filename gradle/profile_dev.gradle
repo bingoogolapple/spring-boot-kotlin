@@ -1,0 +1,3 @@
+dependencies {
+    providedCompile("org.springframework.boot:spring-boot-starter-tomcat")
+}
