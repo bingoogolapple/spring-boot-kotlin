@@ -5,6 +5,8 @@ buildscript {
         swaggerVersion = '2.7.0'
         javaxServletApiVersion = '3.1.0'
         sbkVersion = '1.0.0'
+        druidSpringBootStarterVersion = '1.1.0'
+        mysqlConnectorJavaVersion = '6.0.6'
     }
     repositories {
         mavenCentral()
