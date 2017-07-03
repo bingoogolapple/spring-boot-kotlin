@@ -26,7 +26,7 @@ class SwaggerConfig {
     @Bean
     fun testApi(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
-                .host("localhost:9090")
+                .host("localhost:18080")
                 .globalOperationParameters(Arrays.asList(
                         ParameterBuilder()
                                 .name("header1name")

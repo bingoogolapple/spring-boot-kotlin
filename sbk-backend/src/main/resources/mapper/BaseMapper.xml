@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="base">
+    <sql id="InsertColumnName">
+        inUser,
+        inDate,
+        lastEditUser,
+        lastEditDate,
+        isActive
+    </sql>
+
+    <sql id="InsertColumnValue">
+        #{inUser},
+        #{inDate},
+        #{lastEditUser},
+        #{lastEditDate},
+        #{isActive}
+    </sql>
+
+    <sql id="UpdateColumn">
+        <if test="isActive!=null">
+            isActive = #{isActive},
+        </if>
+        lastEditUser = #{lastEditUser},
+        lastEditDate = #{lastEditDate}
+    </sql>
+
+    <sql id="ResultColumnList">
+        inUser,
+        inDate,
+        lastEditUser,
+        lastEditDate,
+        isActive
+    </sql>
+</mapper>

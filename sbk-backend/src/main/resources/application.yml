@@ -33,3 +33,7 @@ spring:
         url-pattern: /*
         #exclusions: *.map,*.woff,*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*
       aop-patterns: cn.bingoogolapple.sbk.service.*   # Spring监控AOP切入点
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: cn.bingoogolapple.sbk.model;cn.bingoogolapple.sbk.model.*;cn.bingoogolapple.sbk.dto;cn.bingoogolapple.sbk.dto.*;

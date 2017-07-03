@@ -1,5 +1,7 @@
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
+apply plugin: "kotlin-allopen"
+apply plugin: "kotlin-noarg"
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply from: rootProject.file('profile/profile.gradle')
@@ -15,6 +17,14 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+
+allOpen {
+    annotation("cn.bingoogolapple.sbk.annotation.AllopenNoarg")
+}
+noArg {
+    annotation("cn.bingoogolapple.sbk.annotation.AllopenNoarg")
+}
+
 dependencies {
     compile project(':sbk-core')
 
@@ -24,12 +34,15 @@ dependencies {
         exclude module: "spring-boot-starter-tomcat"
     }
     providedCompile("javax.servlet:javax.servlet-api:$javaxServletApiVersion")
-
+    compile("com.alibaba:fastjson:$fastjsonVersion")
     compile("io.springfox:springfox-swagger2:$swaggerVersion")
     compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
 
+    runtime("mysql:mysql-connector-java:$mysqlConnectorJavaVersion")
     compile("com.alibaba:druid-spring-boot-starter:$druidSpringBootStarterVersion")
-    compile("mysql:mysql-connector-java:$mysqlConnectorJavaVersion")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisSpringBootStarterVersion")
+    compile("com.github.pagehelper:pagehelper-spring-boot-starter:$pagehelperSpringBootStarterVersion")
+
 
 
     runtime("org.springframework.boot:spring-boot-devtools")

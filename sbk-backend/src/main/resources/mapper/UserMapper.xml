@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bingoogolapple.sbk.repository.UserRepository">
+
+    <sql id="ResultColumnList">
+        id,
+        username,
+        password,
+        email,
+        cellphone,
+        <include refid="base.ResultColumnList"/>
+    </sql>
+
+    <!-- 新增用户 -->
+    <insert id="insert" parameterType="UserModel" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_user(
+        username,
+        password,
+        email,
+        cellphone,
+        <include refid="base.InsertColumnName"/>
+        ) VALUES (
+        #{username},
+        #{password},
+        #{email},
+        #{cellphone},
+        <include refid="base.InsertColumnValue"/>
+        )
+    </insert>
+    <sql id="CommonSelect">
+        SELECT
+        <include refid="ResultColumnList"/>
+        FROM t_user
+    </sql>
+</mapper>
