@@ -22,7 +22,7 @@ class HelloController {
     fun world() : HashMap<String, String> {
         val hashMap = HashMap<String, String>();
         hashMap.put("hello", "world");
-        hashMap.put("hello1", "world1");
+        hashMap.put("hello1", "world111111");
         hashMap.put("helloworld", Test().test());
         return hashMap;
     }

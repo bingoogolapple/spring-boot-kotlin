@@ -2,7 +2,7 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
-apply from: rootProject.file('gradle/profile.gradle')
+apply from: rootProject.file('profile/profile.gradle')
 
 version sbkVersion
 
@@ -23,6 +23,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf") {
         exclude module: "spring-boot-starter-tomcat"
     }
+    providedCompile("javax.servlet:javax.servlet-api:$javaxServletApiVersion")
 
     compile("io.springfox:springfox-swagger2:$swaggerVersion")
     compile("io.springfox:springfox-swagger-ui:$swaggerVersion")

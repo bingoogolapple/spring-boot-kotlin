@@ -1,0 +1,23 @@
+def prodProfile = 'prod'
+def devProfile = 'dev'
+def testProfile = 'test'
+def activeProfile
+
+if (project.hasProperty(prodProfile)) {
+    activeProfile = prodProfile
+    apply from: rootProject.file('profile/profile_prod.gradle')
+} else if (project.hasProperty(devProfile)) {
+    activeProfile = devProfile
+    apply from: rootProject.file('profile/profile_dev.gradle')
+} else {
+    activeProfile = testProfile
+    apply from: rootProject.file('profile/profile_test.gradle')
+}
+
+println "====================== Using profile 「${activeProfile}」 for 「${project.name}」 ======================"
+
+processResources {
+    filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+            activeProfile: activeProfile
+    ]
+}
