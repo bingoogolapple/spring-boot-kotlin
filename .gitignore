@@ -12,9 +12,9 @@ build/
 # Mac system files
 .DS_Store
 
-sbk-backend/src/main/resources/static
+sbk-manager-backend/src/main/resources/static
 
-!sbk-frontend/build
+!sbk-manager-frontend/build
 
 dist/
 node_modules/

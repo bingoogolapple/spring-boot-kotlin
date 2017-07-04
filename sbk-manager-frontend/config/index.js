@@ -4,8 +4,8 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../../sbk-backend/src/main/resources/static/index.html'),
-    assetsRoot: path.resolve(__dirname, '../../sbk-backend/src/main/resources'),
+    index: path.resolve(__dirname, '../../sbk-manager-backend/src/main/resources/static/index.html'),
+    assetsRoot: path.resolve(__dirname, '../../sbk-manager-backend/src/main/resources'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: true,
