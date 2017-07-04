@@ -35,5 +35,7 @@ spring:
       aop-patterns: cn.bingoogolapple.sbk.service.*   # Spring监控AOP切入点
 
 mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
+  mapper-locations: classpath:mybatis/*Mapper.xml
   type-aliases-package: cn.bingoogolapple.sbk.model;cn.bingoogolapple.sbk.model.*;cn.bingoogolapple.sbk.dto;cn.bingoogolapple.sbk.dto.*;
+  configuration:
+    map-underscore-to-camel-case: true

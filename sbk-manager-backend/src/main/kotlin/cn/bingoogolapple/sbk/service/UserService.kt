@@ -1,7 +1,7 @@
 package cn.bingoogolapple.sbk.service
 
+import cn.bingoogolapple.sbk.mapper.UserMapper
 import cn.bingoogolapple.sbk.model.UserModel
-import cn.bingoogolapple.sbk.repository.UserRepository
 import org.springframework.stereotype.Service
 
 /**
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service
  * 描述:
  */
 @Service
-class UserService(val userRepository: UserRepository) {
+class UserService(val userMapper: UserMapper) {
 
     fun create(model: UserModel) {
-        userRepository.insert(model)
+        userMapper.insert(model)
     }
 
 }
