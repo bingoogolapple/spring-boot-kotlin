@@ -7,7 +7,6 @@
         username,
         password,
         email,
-        cellphone,
         <include refid="base.ResultColumnList"/>
     </sql>
 
@@ -17,13 +16,11 @@
         username,
         password,
         email,
-        cellphone,
         <include refid="base.InsertColumnName"/>
         ) VALUES (
         #{username},
         #{password},
         #{email},
-        #{cellphone},
         <include refid="base.InsertColumnValue"/>
         )
     </insert>

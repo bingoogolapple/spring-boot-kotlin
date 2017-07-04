@@ -10,6 +10,7 @@ buildscript {
         pagehelperSpringBootStarterVersion = '1.1.2'
         mybatisSpringBootStarterVersion = '1.3.0'
         fastjsonVersion = '1.2.34'
+        hibernateValidatorVersion = '5.4.1.Final'
     }
     repositories {
         mavenCentral()

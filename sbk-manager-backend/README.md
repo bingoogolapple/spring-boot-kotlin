@@ -14,7 +14,6 @@ CREATE TABLE `t_user` (
   `username` varchar(30) NOT NULL COMMENT '登录用户名需要建立唯一索引',
   `password` varchar(32) NOT NULL,
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱地址',
-  `cellphone` varchar(50) DEFAULT NULL COMMENT '手机号',
   `inUser` varchar(50) NOT NULL COMMENT '创建人',
   `inDate` datetime(3) NOT NULL COMMENT '创建日期',
   `lastEditUser` varchar(50) NOT NULL COMMENT '更新人',

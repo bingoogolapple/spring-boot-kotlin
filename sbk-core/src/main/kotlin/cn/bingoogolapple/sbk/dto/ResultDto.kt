@@ -9,8 +9,8 @@ import java.util.*
  * 描述:
  */
 data class ResultDto<T>(val code: Int, val message: String?, val data: T?) : Serializable {
-    private var errorMessage: String? = null
-    private var stackTrace: String? = null
+    var errorMessage: String? = null
+    var stackTrace: String? = null
 
     constructor(code: Int) : this(code, null, null)
 
@@ -32,24 +32,24 @@ data class ResultDto<T>(val code: Int, val message: String?, val data: T?) : Ser
          */
         val FORBIDDEN = 3
 
-        fun ok(message: String?, data: Any?): ResultDto<*> {
+        fun ok(message: String?, data: Any?): ResultDto<Any> {
             return ResultDto(ResultDto.OK, message, data)
         }
 
-        fun data(data: Any): ResultDto<*> {
+        fun data(data: Any): ResultDto<Any> {
             return ResultDto.ok(null, data)
         }
 
-        fun msg(message: String?): ResultDto<*> {
+        fun msg(message: String?): ResultDto<Any> {
             return ResultDto.ok(message, null)
         }
 
-        fun ok(): ResultDto<*> {
+        fun ok(): ResultDto<Any> {
             return ResultDto.msg(null)
         }
 
-        fun error(e: Exception?): ResultDto<*> {
-            val resultDto = ResultDto<String>(ResultDto.ERROR)
+        fun error(e: Exception?): ResultDto<Any> {
+            val resultDto = ResultDto<Any>(ResultDto.ERROR)
 
             if (e != null) {
                 resultDto.errorMessage = "系统异常"
@@ -61,16 +61,16 @@ data class ResultDto<T>(val code: Int, val message: String?, val data: T?) : Ser
             return resultDto
         }
 
-        fun warning(e: Exception?): ResultDto<*> {
-            val resultDto = ResultDto<String>(ResultDto.WARNING)
+        fun warning(e: Exception?): ResultDto<Any> {
+            val resultDto = ResultDto<Any>(ResultDto.WARNING)
             if (e != null) {
                 resultDto.errorMessage = e.message
             }
             return resultDto
         }
 
-        fun forbidden(e: Exception?): ResultDto<*> {
-            val resultDto = ResultDto<String>(ResultDto.FORBIDDEN)
+        fun forbidden(e: Exception?): ResultDto<Any> {
+            val resultDto = ResultDto<Any>(ResultDto.FORBIDDEN)
             if (e != null) {
                 resultDto.errorMessage = e.message
             }

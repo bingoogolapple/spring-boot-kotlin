@@ -38,11 +38,11 @@ dependencies {
     compile("io.springfox:springfox-swagger2:$swaggerVersion")
     compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
 
+    compile("org.hibernate:hibernate-validator:$hibernateValidatorVersion")
     runtime("mysql:mysql-connector-java:$mysqlConnectorJavaVersion")
     compile("com.alibaba:druid-spring-boot-starter:$druidSpringBootStarterVersion")
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisSpringBootStarterVersion")
     compile("com.github.pagehelper:pagehelper-spring-boot-starter:$pagehelperSpringBootStarterVersion")
-
 
 
     runtime("org.springframework.boot:spring-boot-devtools")
