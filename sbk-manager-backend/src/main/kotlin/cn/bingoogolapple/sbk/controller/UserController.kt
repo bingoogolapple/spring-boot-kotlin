@@ -6,12 +6,12 @@ import cn.bingoogolapple.sbk.service.UserService
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiImplicitParam
 import io.swagger.annotations.ApiOperation
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-
-
+import javax.validation.Valid
 
 /**
  * 作者:王浩 邮件:bingoogolapple@gmail.com
@@ -26,7 +26,7 @@ class UserController(val userService: UserService) {
     @ApiOperation(value = "添加用户", notes = "根据User对象创建用户")
     @ApiImplicitParam(name = "model", value = "用户实体", required = true, paramType = "body", dataType = "UserModel")
     @PostMapping
-    fun postBlog(@RequestBody model: UserModel): ResultDto<*> {
+    fun postBlog(@Valid @RequestBody model: UserModel, bindingResult: BindingResult): ResultDto<*> {
         userService.create(model)
         return ResultDto.msg("添加用户成功")
     }
