@@ -45,6 +45,8 @@ dependencies {
     compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisSpringBootStarterVersion")
     compile("com.github.pagehelper:pagehelper-spring-boot-starter:$pagehelperSpringBootStarterVersion")
 
-    runtime("org.springframework.boot:spring-boot-devtools")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    // providedCompile -> 在编译时需要，但是由运行时环境提供，不会被打包到 War 文件中
+    // runtime -> 在编译时不需要，但是运行时需要，会被打包到 War 文件中
 }

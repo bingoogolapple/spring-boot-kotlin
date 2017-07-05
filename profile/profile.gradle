@@ -3,7 +3,7 @@ def devProfile = 'dev'
 def testProfile = 'test'
 def activeProfile
 
-if (project.hasProperty(prodProfile)) {
+if (hasProperty(prodProfile)) {
     activeProfile = prodProfile
     apply from: rootProject.file('profile/profile_prod.gradle')
 } else if (project.hasProperty(devProfile)) {

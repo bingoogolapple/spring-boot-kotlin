@@ -7,10 +7,10 @@
 > 在命令行中运行
 
 ```
-gradle sbk-backend:clean sbk-manager-backend:bootRun -Pdev
+gradle sbk-manager-backend:clean sbk-manager-backend:bootRun -Pdev
 ```
 > 打包
 
 ```
-gradle sbk-backend:clean sbk-manager-backend:war -Pprod
+gradle sbk-manager-backend:clean sbk-manager-backend:war -Pprod
 ```

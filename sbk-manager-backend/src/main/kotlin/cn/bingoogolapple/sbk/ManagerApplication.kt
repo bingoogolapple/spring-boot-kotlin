@@ -10,13 +10,13 @@ import org.springframework.boot.web.support.SpringBootServletInitializer
  * 继承 SpringBootServletInitializer 是为了能够部署到独立的 Tomcat 中
  */
 @SpringBootApplication
-class BackendApplication : SpringBootServletInitializer() {
+class ManagerApplication : SpringBootServletInitializer() {
 
     override fun configure(application: SpringApplicationBuilder): SpringApplicationBuilder {
-        return application.sources(BackendApplication::class.java)
+        return application.sources(ManagerApplication::class.java)
     }
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(BackendApplication::class.java, *args)
+    SpringApplication.run(ManagerApplication::class.java, *args)
 }

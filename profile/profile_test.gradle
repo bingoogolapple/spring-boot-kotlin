@@ -1,0 +1,4 @@
+dependencies {
+    runtime("org.springframework.boot:spring-boot-devtools")
+    providedCompile("org.springframework.boot:spring-boot-starter-tomcat")
+}
