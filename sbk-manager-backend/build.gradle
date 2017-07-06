@@ -28,8 +28,6 @@ noArg {
 dependencies {
     compile project(':sbk-core')
 
-    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-
     compile("org.springframework.boot:spring-boot-starter-thymeleaf") {
         exclude module: "spring-boot-starter-tomcat"
     }

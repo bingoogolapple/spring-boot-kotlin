@@ -2,6 +2,7 @@ package cn.bingoogolapple.sbk.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Profile
 import springfox.documentation.builders.ApiInfoBuilder
 import springfox.documentation.builders.ParameterBuilder
 import springfox.documentation.builders.PathSelectors
@@ -18,7 +19,7 @@ import java.util.*
  * 创建时间:2017/6/28 下午5:20
  * 描述:
  */
-//@Profile("!product")
+@Profile("!prod")
 @Configuration
 @EnableSwagger2
 class SwaggerConfig {
